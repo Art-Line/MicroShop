@@ -61,25 +61,25 @@ if (localStorage.getItem('MicroShop') && $(document).find(form_order_cart).lengt
   $.each(oProducts.items, function(index, elem) {
     var
       html = '<tr>'
-    html += '<td>'
-    html += index + 1
-    html += '</td>'
-    html += '<td>'
-    html += '<a href="' + this.url + '">' + this.name + '</a>'
-    html += '</td>'
-    html += '<td class="text-center">'
-    html += this.art
-    html += '</td>'
-    html += '<td class="text-center" style="min-width: 150px">'
-    html += this.price + ' р.'
-    html += '</td>'
-    html += '<td class="text-center">'
-    html += '<input data-atr="' + this.art + '" type="number" class="product_count form-control" min="1" value="' + this.count + '"></input>'
-    html += '</td>'
-    html += '<td class="text-center">'
-    html += '<button data-atr="' + this.art + '" class="btn form-control" type="button" value="cart/remove"><i class="fas fa-minus-circle"></i></button></td></tr>'
-    html += '</td>'
-    html += '</tr>'
+      html += '<td>'
+      html += index + 1
+      html += '</td>'
+      html += '<td>'
+      html += '<a href="' + this.url + '">' + this.name + '</a>'
+      html += '</td>'
+      html += '<td class="text-center">'
+      html += this.art
+      html += '</td>'
+      html += '<td class="text-center" style="min-width: 150px">'
+      html += this.price + ' р.'
+      html += '</td>'
+      html += '<td class="text-center">'
+      html += '<input data-atr="' + this.art + '" type="number" class="product_count form-control" min="1" value="' + this.count + '"></input>'
+      html += '</td>'
+      html += '<td class="text-center">'
+      html += '<button data-atr="' + this.art + '" class="btn form-control" type="button" value="cart/remove"><i class="fas fa-minus-circle"></i></button></td></tr>'
+      html += '</td>'
+      html += '</tr>'
     cart_html += html
     sum = parseInt(sum + this.price * this.count)
     count = parseInt(count) + parseInt(this.count)
@@ -89,18 +89,18 @@ if (localStorage.getItem('MicroShop') && $(document).find(form_order_cart).lengt
   // -- Собираем итог
   var
     html = '<tfoot><tr>'
-  html += '<td class="text-right" colspan="3"><strong>' + 'Итого:' + '</strong></td>'
-  html += '<td class="text-center">'
-  html += '<strong><span id="cart_sum">' + sum + '</span></strong> р.'
-  html += '</td>'
-  html += '<td class="text-center">'
-  html += '<strong><span id="cart_count">' + count + '</span></strong> шт.'
-  html += '</td>'
-  html += '<td class="text-center">'
-  html += '<button data-atr="' + this.art + '" class="btn form-control" type="button" value="cart/removeall"><i class="fas fa-trash-alt"></i></button></td></tr>'
-  html += '</td>'
-  html += '</tr></tfoot>'
-  cart_html += html
+    html += '<td class="text-right" colspan="3"><strong>' + 'Итого:' + '</strong></td>'
+    html += '<td class="text-center">'
+    html += '<strong><span id="cart_sum">' + sum + '</span></strong> р.'
+    html += '</td>'
+    html += '<td class="text-center">'
+    html += '<strong><span id="cart_count">' + count + '</span></strong> шт.'
+    html += '</td>'
+    html += '<td class="text-center">'
+    html += '<button data-atr="' + this.art + '" class="btn form-control" type="button" value="cart/removeall"><i class="fas fa-trash-alt"></i></button></td></tr>'
+    html += '</td>'
+    html += '</tr></tfoot>'
+    cart_html += html
 
   // -- Вставляем
   $(document).find(form_order_cart).find('table thead').after(cart_html)
