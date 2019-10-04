@@ -1,0 +1,97 @@
+<!-- Кнопка добавления товара -->
+<button type="submit" class="btn" value="cart/add">
+  <i class="fas fa-cart-plus"></i>
+  в корзину
+</button>
+<!-- Кнопка добавления товара x-->
+
+<!-- Кнопка корзины -->
+<div class="shop_cart">
+  <a href="[[~ID_PAGE_CART]]" class="shop_cart_btn">
+    <i class="fas fa-shopping-cart"></i>
+    <span></span>
+  </a>
+</div>
+<!-- Кнопка корзины x-->
+
+<!-- Страница оформление заказа -->
+<div class="form_order_null col-12">
+  <p class="text-center">
+    В корзине нет товаров
+  </p>
+</div>
+
+<div class="form_order_success col-12">
+  <h3 class="text-center">
+    Заказ успешно оформлен!
+  </h3>
+</div>
+
+<form id="form_order" class="form_order col-12">
+  <!-- Инфа -->
+  <div class="row _block">
+    <div class="col-12 _title">
+      <h3>Оформление закза</h3>
+    </div>
+
+    <div class="col-12">
+      <div class="form-group row">
+        <label for="input_fio" class="col-sm-3 col-form-label">ФИО</label>
+        <div class="col-sm-9">
+          <input type="text" name="fio" class="form-control" id="input_fio" aria-describedby="emailHelp" placeholder="ФИО">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="input_tel" class="col-sm-3 col-form-label">Телефон</label>
+        <div class="col-sm-9">
+          <input type="text" name="tel" class="form-control" id="input_tel" placeholder="Телефон" required="required">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="input_email" class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input type="text" name="email" class="form-control" id="input_email" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="input_comment" class="col-sm-3 col-form-label">Комментарий</label>
+        <div class="col-sm-9">
+          <textarea name="comment" rows="3" class="form-control" id="input_comment" placeholder="Комментарий"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Товары -->
+  <div class="_block form_order_cart" id="msCart">
+    <div class="_title">
+      <h3>Корзина</h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr class="header">
+            <th class="number text-center">№</th>
+            <th class="title">Наименование</th>
+            <th class="art text-center">Артикул</th>
+            <th class="price text-center">Цена</th>
+            <th class="count text-center">Количество</th>
+            <th class="remove"></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <input type="hidden" id="input_products" name="products" value="">
+  </div>
+
+  <!-- Оформление -->
+  <div class="row _block">
+    <div class="col-12 mb-2">
+      <div class="form-gorup text-right">
+        <button type="submit" class="btn">Оформить</button>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- Страница оформление заказа x-->
