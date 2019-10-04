@@ -1,6 +1,6 @@
 # MicroShop
 ## MODX REVO | FormIt | AjaxForm | JS | jQuery | LocalStorage | BootStrap4 | FontAveasome 
-> Магазин с хранением и обработкой на стороне пользователя  
+> Магазин с хранением и обработкой товаров на стороне пользователя  
 > Подробности на [trywar.ru](https://trywar.ru/3/205/)
 
 ### Содержуха
