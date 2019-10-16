@@ -73,8 +73,10 @@ if (localStorage.getItem('MicroShop') && $(document).find(form_order_cart).lengt
       html += '<td class="text-center" style="min-width: 150px">'
       html += this.price + ' р.'
       html += '</td>'
-      html += '<td class="text-center">'
-      html += '<input data-atr="' + this.art + '" type="number" class="product_count form-control" min="1" value="' + this.count + '"></input>'
+      html += '<td class="text-center d-flex justify-content-center">'
+      html += '<button type="button" class="form-control product_count_minus" name="button">-</button>'
+      html += '<input data-atr="'+this.art+'" type="text" class="product_count form-control" name="count" min="1" value="'+this.count+'"></input>'
+      html += '<button type="button" class="form-control product_count_plus" name="button">+</button>'
       html += '</td>'
       html += '<td class="text-center">'
       html += '<button data-atr="' + this.art + '" class="btn form-control" type="button" value="cart/remove"><i class="fas fa-minus-circle"></i></button></td></tr>'
@@ -207,7 +209,7 @@ $(document).find(button_remove_all).on('click', function() {
 })
 
 // - Изменения количества товара
-$(document).find(product_count).on('change', function() {
+$(document).find(product_count).on('change click', function() {
   var oProduct = {
     art: $(this).data().atr,
     count: $(this).val()
@@ -221,6 +223,23 @@ $(document).find(product_count).on('change', function() {
     }
   })
   cart_reload()
+})
+
+// - В поле количества ввод только цифр
+$('[name=count]').bind("change keyup input click", function() {
+  if (this.value.match(/[^0-9]/g))
+  this.value = this.value.replace(/[^0-9]/g, '');
+  if (this.value == 0)
+  this.value = 1
+})
+
+// - Стрелочки для изменения количества товара
+$(document).find('.product_count_minus').on('click',function(){
+  if ($(this).next('[name=count]').val() != 1)
+    $(this).next('[name=count]').val(parseInt($(this).next('[name=count]').val()) - 1).click()
+})
+$(document).find('.product_count_plus').on('click',function(){
+  $(this).prev('[name=count]').val(parseInt($(this).prev('[name=count]').val()) + 1).click()
 })
 // MicroShop x
 
